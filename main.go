@@ -269,6 +269,17 @@ func Get(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["ゲッコウガex"] >= 2 {
+		deckType := analyze(
+			"ゲッコウガex",
+			deck,
+			[]string{
+				"ゲッコウガex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["ダイゴのメタグロスex"] >= 3 {
 		deckType := analyze(
 			"ダイゴのメタグロスex",
