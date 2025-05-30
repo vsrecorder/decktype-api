@@ -43,10 +43,6 @@ func main() {
 		},
 		AllowMethods: []string{
 			"GET",
-			"POST",
-			"PUT",
-			"PATCH",
-			"DELETE",
 			"OPTIONS",
 		},
 		AllowOrigins: []string{
@@ -556,6 +552,18 @@ func Get(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["ロケット団のニドクイン"] >= 2 {
+		deckType := analyze(
+			"ロケット団のニドクイン",
+			deck,
+			[]string{
+				"ロケット団のニドクイン",
+				"ニドキング",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["ロケット団のアーボック"] >= 2 {
 		deckType := analyze(
 			"ロケット団のアーボック",
@@ -1054,7 +1062,7 @@ func Get(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["テツノイバラex"] == 4 {
+	if cardlist["テツノイバラex"] >= 3 {
 		deckType := analyze(
 			"テツノイバラex",
 			deck,
@@ -1273,6 +1281,22 @@ func Get(ctx *gin.Context) {
 				"おはやし笛",
 				"クセロシキのたくらみ",
 				"ビワ",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["シャリタツex"] >= 2 {
+		deckType := analyze(
+			"シャリタツex",
+			deck,
+			[]string{
+				"シャリタツex",
+				"リザードンex",
+				"バシャーモex",
+				"ゲッコウガex",
+				"ドラパルトex",
+				"ピジョットex",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
