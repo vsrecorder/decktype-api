@@ -1,4 +1,4 @@
-module github.com/vsrecorder/detect-decktype
+module github.com/vsrecorder/decktype-api
 
 go 1.23.4
 
