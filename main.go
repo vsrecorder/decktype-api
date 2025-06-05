@@ -47,6 +47,11 @@ func main() {
 		handlers.GetSV10,
 	)
 
+	r.GET(
+		"/decktypes/:id/sv11",
+		handlers.GetSV11,
+	)
+
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
 
