@@ -12,30 +12,6 @@ func GetSV11(ctx *gin.Context) {
 	deckCode := ctx.Param("id")
 	resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/" + deckCode)
 
-	// タケルライコex
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/ngnLQQ-N9tdRR-ignLgn")
-
-	// ドラパルトex
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/HLQgin-PvQExD-gQLgQg")
-
-	// 悪リザードンex & ドラパルトex
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/vVkfVF-lxMyv8-VvwvFk")
-
-	// バチュルバレット
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/SMpSpM-REy1lZ-EypSyX")
-
-	// ロケット団のミューツーex
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/QLLngg-o6YtFY-LQQNgH")
-
-	// 古代バレット
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/SypMyy-rw6242-XyU2pM")
-
-	// オーダイル
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/VkwFFv-RlGSbH-5vk5vd")
-
-	// ユキメノコ & マシマシラ
-	//resp, err := http.Get("https://vsrecorder.mobi/api/v1/deckcards/6nQQgN-QhjfmY-nNgQnH")
-
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, err.Error())
 		return
@@ -535,7 +511,7 @@ func GetSV11(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["トドロクツキex"] >= 2 && cardlist["トドロクツキ"] <= 2 {
+	if cardlist["トドロクツキex"] >= 2 && cardlist["トドロクツキ"] <= 2 && (cardlist["モモワロウ"] == 0 && cardlist["アラブルタケ"] == 0) {
 		deckType := analyze(
 			"トドロクツキex",
 			deck,
@@ -565,22 +541,20 @@ func GetSV11(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	/*
-		if (cardlist["トドロクツキex"] >= 2 || cardlist["トドロクツキ"] >= 2) && cardlist["モモワロウ"] >= 2 && cardlist["アラブルタケ"] >= 2 && cardlist["オーリム博士の気迫"] == 4 && cardlist["危険な密林"] >= 3 {
-			deckType := analyze(
-				"毒トドロクツキ",
-				deck,
-				[]string{
-					"トドロクツキex",
-					"トドロクツキ",
-					"モモワロウ",
-					"アラブルタケ",
-					"危険な密林",
-				},
-			)
-			deckTypes = append(deckTypes, deckType)
-		}
-	*/
+	if (cardlist["トドロクツキex"] >= 2 || cardlist["トドロクツキ"] >= 2) && cardlist["モモワロウ"] >= 2 && cardlist["アラブルタケ"] >= 2 && cardlist["オーリム博士の気迫"] == 4 && cardlist["危険な密林"] >= 3 {
+		deckType := analyze(
+			"毒トドロクツキ",
+			deck,
+			[]string{
+				"トドロクツキex",
+				"トドロクツキ",
+				"モモワロウ",
+				"アラブルタケ",
+				"危険な密林",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
 
 	if cardlist["Nのゾロアークex"] >= 3 && (cardlist["Nのヒヒダルマ"] >= 2 || cardlist["Nのレシラム"] >= 1 || cardlist["Nのシンボラー"] >= 1) {
 		deckType := analyze(
@@ -859,7 +833,7 @@ func GetSV11(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["イダイナキバ"] >= 3 && cardlist["ニュートラルセンター"] == 1 {
+	if cardlist["イダイナキバ"] >= 3 && cardlist["ニュートラルセンター(ACE SPEC)"] == 1 {
 		deckType := analyze(
 			"イダイナキバLO",
 			deck,
@@ -867,7 +841,7 @@ func GetSV11(ctx *gin.Context) {
 				"イダイナキバ",
 				"ヒビキのウソッキー",
 				"クラッシュハンマー",
-				"ニュートラルセンター",
+				"ニュートラルセンター(ACE SPEC)",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
