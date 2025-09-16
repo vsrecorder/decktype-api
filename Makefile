@@ -1,3 +1,8 @@
+.PHONY: build
+build:
+	go mod tidy
+	go build -o bin/main main.go
+
 .PHONY: run
 run:
 	go mod tidy
