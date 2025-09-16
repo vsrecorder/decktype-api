@@ -509,7 +509,7 @@ func GetSV10(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["トドロクツキex"] >= 2 && cardlist["トドロクツキ"] <= 2 {
+	if cardlist["トドロクツキex"] >= 2 && cardlist["トドロクツキ"] <= 2 && (cardlist["モモワロウ"] == 0 && cardlist["アラブルタケ"] == 0) {
 		deckType := analyze(
 			"トドロクツキex",
 			deck,
