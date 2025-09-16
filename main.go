@@ -39,7 +39,7 @@ func main() {
 
 	r.GET(
 		"/decktypes/:id",
-		handlers.GetSV10,
+		handlers.GetM1,
 	)
 
 	r.GET(
@@ -50,6 +50,11 @@ func main() {
 	r.GET(
 		"/decktypes/:id/sv11",
 		handlers.GetSV11,
+	)
+
+	r.GET(
+		"/decktypes/:id/m1",
+		handlers.GetM1,
 	)
 
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
