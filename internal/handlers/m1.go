@@ -1129,6 +1129,17 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["メガゲンガーex"] >= 2 {
+		deckType := analyze(
+			"メガゲンガーex",
+			deck,
+			[]string{
+				"メガゲンガーex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["ミロカロスex"] >= 2 {
 		deckType := analyze(
 			"ミロカロスex",
