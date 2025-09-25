@@ -143,6 +143,7 @@ func GetM1(ctx *gin.Context) {
 			[]string{
 				"サーナイトex",
 				"メガサーナイトex",
+				"メガディアンシーex",
 				"ミステリーガーデン",
 			},
 		)
