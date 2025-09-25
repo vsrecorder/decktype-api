@@ -28,7 +28,6 @@ func main() {
 			"OPTIONS",
 		},
 		AllowOrigins: []string{
-			//"*",
 			"http://localhost:3000",
 			"https://local.vsrecorder.mobi",
 			"https://decktype.vsrecorder.mobi",
@@ -37,25 +36,17 @@ func main() {
 		MaxAge:           24 * time.Hour,
 	}))
 
-	r.GET(
-		"/decktypes/:id",
-		handlers.GetM1,
-	)
+	{
+		r.GET(
+			"/decktypes/:id",
+			handlers.GetM1,
+		)
 
-	r.GET(
-		"/decktypes/:id/sv10",
-		handlers.GetSV10,
-	)
-
-	r.GET(
-		"/decktypes/:id/sv11",
-		handlers.GetSV11,
-	)
-
-	r.GET(
-		"/decktypes/:id/m1",
-		handlers.GetM1,
-	)
+		r.GET(
+			"/decktypes/:id/m1",
+			handlers.GetM1,
+		)
+	}
 
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
@@ -89,5 +80,4 @@ func main() {
 	}
 
 	log.Println("Server exiting")
-
 }

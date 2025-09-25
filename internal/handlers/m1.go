@@ -87,6 +87,7 @@ func GetM1(ctx *gin.Context) {
 				"コライドン",
 				"チヲハウハネ",
 				"テツノイサハex",
+				"メガガルーラex",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
@@ -102,12 +103,13 @@ func GetM1(ctx *gin.Context) {
 				"ヨルノズク",
 				"ヨノワール",
 				"テラパゴスex",
+				"イーユイ",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["ドラパルトex"] >= 2 && cardlist["ドロンチ"] >= 3 && cardlist["ドラメシヤ"] >= 3 {
+	if cardlist["ドラパルトex"] >= 2 && cardlist["ドロンチ"] >= 2 && cardlist["ドラメシヤ"] >= 2 {
 		deckType := analyze(
 			"ドラパルトex",
 			deck,
@@ -183,6 +185,8 @@ func GetM1(ctx *gin.Context) {
 				"ソウブレイズex",
 				"ノココッチ",
 				"ブロロローム",
+				"ソルロック",
+				"ルナトーン",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
@@ -194,11 +198,11 @@ func GetM1(ctx *gin.Context) {
 			deck,
 			[]string{
 				"サーフゴーex",
-				"ドラパルトex",
 				"ゲノセクトex",
 				"ノココッチ",
-				"ヒビキのバクフーン",
 				"ハッサム",
+				"ソルロック",
+				"ルナトーン",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
@@ -1079,6 +1083,7 @@ func GetM1(ctx *gin.Context) {
 				"ピカチュウex",
 				"テツノイサハex",
 				"リーリエのピッピex",
+				"メガガルーラex",
 				"ゼロの大空洞",
 			},
 		)
@@ -1149,7 +1154,7 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["ユキメノコ"] >= 2 && cardlist["マシマシラ"] >= 3 && cardlist["マリィのオーロンゲex"] == 0 {
+	if cardlist["マリィのオーロンゲex"] == 0 && cardlist["ユキメノコ"] >= 2 && cardlist["マシマシラ"] >= 3 {
 		deckType := analyze(
 			"ユキメノコ & マシマシラ",
 			deck,
@@ -1219,25 +1224,6 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["おはやし笛"] >= 2 && cardlist["クセロシキのたくらみ"] >= 1 && cardlist["ビワ"] >= 1 {
-		deckType := analyze(
-			"コントロール",
-			deck,
-			[]string{
-				"ロケット団のリーシャン",
-				"ヒビキのウソッキー",
-				"ミロカロス",
-				"ゲノセクト",
-				"イーユイex",
-				"ディンルーex",
-				"おはやし笛",
-				"クセロシキのたくらみ",
-				"ビワ",
-			},
-		)
-		deckTypes = append(deckTypes, deckType)
-	}
-
 	if cardlist["シャリタツex"] >= 2 {
 		deckType := analyze(
 			"シャリタツex",
@@ -1254,6 +1240,24 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["ウミトリオ"] >= 3 {
+		deckType := analyze(
+			"ウミトリオLO",
+			deck,
+			[]string{
+				"ウミトリオ",
+				"ノココッチ",
+				"ドロンチ",
+				"チルタリス",
+				"クラッシュハンマー",
+				"おはやし笛",
+				"イグニッションエネルギー",
+				"リバーサルエネルギー",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["リグレー"] >= 2 {
 		deckType := analyze(
 			"リグレーコントロール",
@@ -1265,6 +1269,25 @@ func GetM1(ctx *gin.Context) {
 				"ピィ",
 				"ケーシィ",
 				"ピジョットex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["おはやし笛"] >= 2 && cardlist["クセロシキのたくらみ"] >= 1 && cardlist["ビワ"] >= 1 {
+		deckType := analyze(
+			"コントロール",
+			deck,
+			[]string{
+				"ロケット団のリーシャン",
+				"ヒビキのウソッキー",
+				"ミロカロス",
+				"ゲノセクト",
+				"イーユイex",
+				"ディンルーex",
+				"おはやし笛",
+				"クセロシキのたくらみ",
+				"ビワ",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
