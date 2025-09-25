@@ -39,7 +39,12 @@ func main() {
 	{
 		r.GET(
 			"/decktypes/:id",
-			handlers.GetM1,
+			handlers.GetM2,
+		)
+
+		r.GET(
+			"/decktypes/:id/m2",
+			handlers.GetM2,
 		)
 
 		r.GET(
