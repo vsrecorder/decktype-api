@@ -11,4 +11,4 @@ run:
 .PHONY: docker-build-and-push
 docker-build-and-push:
 	go mod tidy
-	sudo docker build --no-cache -t vsrecorder/decktype-api:latest . && sudo docker push vsrecorder/decktype-api:latest
+	sudo docker build -t vsrecorder/decktype-api:latest . && sudo docker push vsrecorder/decktype-api:latest

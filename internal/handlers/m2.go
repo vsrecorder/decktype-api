@@ -100,17 +100,6 @@ func GetM2(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["ロトムex"] >= 2 {
-		deckType := analyze(
-			"ロトムex",
-			deck,
-			[]string{
-				"ロトムex",
-			},
-		)
-		deckTypes = append(deckTypes, deckType)
-	}
-
 	if cardlist["ムウマージex"] >= 2 {
 		deckType := analyze(
 			"ムウマージex",
@@ -1259,11 +1248,12 @@ func GetM2(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["カットロトム"] >= 1 && cardlist["ヒートロトム"] >= 1 && cardlist["ウォッシュロトム"] >= 1 && cardlist["ロトム"] >= 1 {
+	if cardlist["ロトムex"] >= 1 && cardlist["カットロトム"] >= 1 && cardlist["ヒートロトム"] >= 1 && cardlist["ウォッシュロトム"] >= 1 && cardlist["ロトム"] >= 1 {
 		deckType := analyze(
 			"ロトムバレット",
 			deck,
 			[]string{
+				"ロトムex",
 				"カットロトム",
 				"ヒートロトム",
 				"ウォッシュロトム",
