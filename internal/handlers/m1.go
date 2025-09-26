@@ -327,7 +327,24 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if (cardlist["イーブイex"] >= 1 || cardlist["イーブイ"] >= 1) && (cardlist["ブースターex"] >= 1 || cardlist["シャワーズex"] >= 1 || cardlist["サンダースex"] >= 1 ||
+	if cardlist["ブースターex"] >= 2 && !(cardlist["シャワーズex"] >= 1 || cardlist["サンダースex"] >= 1 ||
+		cardlist["エーフィex"] >= 1 || cardlist["ブラッキーex"] >= 1 ||
+		cardlist["リーフィアex"] >= 1 || cardlist["グレイシアex"] >= 1 || cardlist["ニンフィアex"] >= 1) {
+		deckType := analyze(
+			"ブースターex",
+			deck,
+			[]string{
+				"ブースターex",
+				"イーブイex",
+				"オーガポン いどのめんex",
+				"テラパゴスex",
+				"リーリエのピッピex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if (cardlist["イーブイex"] >= 1 || cardlist["イーブイ"] >= 1) && cardlist["ブースターex"] >= 1 && (cardlist["シャワーズex"] >= 1 || cardlist["サンダースex"] >= 1 ||
 		cardlist["エーフィex"] >= 1 || cardlist["ブラッキーex"] >= 1 ||
 		cardlist["リーフィアex"] >= 1 || cardlist["グレイシアex"] >= 1 || cardlist["ニンフィアex"] >= 1) {
 		deckType := analyze(
