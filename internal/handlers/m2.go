@@ -117,6 +117,7 @@ func GetM2(ctx *gin.Context) {
 			deck,
 			[]string{
 				"メガサメハダーex",
+				"ストリンダー",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
