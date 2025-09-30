@@ -649,7 +649,7 @@ func GetM2(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["トドロクツキex"] >= 2 && cardlist["トドロクツキ"] <= 2 && (cardlist["モモワロウ"] == 0 && cardlist["アラブルタケ"] == 0) {
+	if (cardlist["トドロクツキex"] >= 2 && cardlist["トドロクツキ"] <= 2 && (cardlist["モモワロウ"] == 0 && cardlist["アラブルタケ"] == 0)) || (cardlist["トドロクツキex"] >= 3 && cardlist["トドロクツキ"] == 0) {
 		deckType := analyze(
 			"トドロクツキex",
 			deck,
