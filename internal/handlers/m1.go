@@ -76,6 +76,17 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["メガアブソルex"] >= 2 {
+		deckType := analyze(
+			"メガアブソルex",
+			deck,
+			[]string{
+				"メガアブソルex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["タケルライコex"] >= 2 && (cardlist["オーガポン みどりのめんex"] >= 2 || cardlist["スナノケガワex"] >= 2) {
 		deckType := analyze(
 			"タケルライコex",
@@ -946,12 +957,15 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["ガチグマ アカツキ"] >= 3 {
+	if cardlist["ガチグマ アカツキ"] >= 2 {
 		deckType := analyze(
 			"ガチグマ アカツキ",
 			deck,
 			[]string{
 				"ガチグマ アカツキ",
+				"ガチグマ アカツキex",
+				"ソルロック",
+				"ルナトーン",
 				"マラカッチ",
 				"マシマシラ",
 				"ラティアスex",
@@ -1075,6 +1089,20 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["メガライボルトex"] >= 3 {
+		deckType := analyze(
+			"メガライボルトex",
+			deck,
+			[]string{
+				"メガライボルトex",
+				"レアコイル",
+				"テツノカイナex",
+				"ゼクロムex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["バチュル"] >= 2 && (cardlist["テツノカイナex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1) {
 		deckType := analyze(
 			"バチュルバレット",
@@ -1110,7 +1138,7 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if (cardlist["オーガポン みどりのめんex"] >= 1 && cardlist["オーガポン いどのめんex"] >= 1 && cardlist["オーガポン いしずえのめんex"] >= 1) && !(cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1) {
+	if cardlist["オーガポン みどりのめんex"] >= 3 && (cardlist["オーガポン いどのめんex"] >= 1 || cardlist["オーガポン いしずえのめんex"] >= 1) && !(cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1) {
 		deckType := analyze(
 			"オーガポンバレット",
 			deck,
@@ -1118,6 +1146,9 @@ func GetM1(ctx *gin.Context) {
 				"オーガポン みどりのめんex",
 				"オーガポン いどのめんex",
 				"オーガポン いしずえのめんex",
+				"リーリエのピッピex",
+				"ミュウex",
+				"メガガルーラex",
 				"鬼の仮面",
 			},
 		)
