@@ -1459,6 +1459,18 @@ func GetM2(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["ニンフィア"] >= 3 && cardlist["エクスレッグ"] >= 2 {
+		deckType := analyze(
+			"ニンフィア + エクスレッグ",
+			deck,
+			[]string{
+				"ニンフィア",
+				"エクスレッグ",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if len(deckTypes) == 0 {
 		ctx.JSON(http.StatusNoContent, deckTypes)
 	} else {
