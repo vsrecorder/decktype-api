@@ -1131,7 +1131,7 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["タケルライコex"] == 0 && (cardlist["オーガポン みどりのめんex"] >= 1 || cardlist["オーガポン いどのめんex"] >= 1 || cardlist["オーガポン いしずえのめんex"] >= 1) && (cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1 || cardlist["リーリエのピッピex"] >= 1) && cardlist["ゼロの大空洞"] >= 2 {
+	if cardlist["タケルライコex"] == 0 && cardlist["リザードンex"] == 0 && (cardlist["オーガポン みどりのめんex"] >= 1 || cardlist["オーガポン いどのめんex"] >= 1 || cardlist["オーガポン いしずえのめんex"] >= 1) && (cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1 || cardlist["リーリエのピッピex"] >= 1) && cardlist["ゼロの大空洞"] >= 2 {
 		deckType := analyze(
 			"テラスタルバレット",
 			deck,
@@ -1150,7 +1150,7 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["オーガポン みどりのめんex"] >= 3 && (cardlist["オーガポン いどのめんex"] >= 1 || cardlist["オーガポン いしずえのめんex"] >= 1) && !(cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1) {
+	if cardlist["タケルライコex"] == 0 && cardlist["リザードンex"] == 0 && cardlist["オーガポン みどりのめんex"] >= 3 && (cardlist["オーガポン いどのめんex"] >= 1 && cardlist["オーガポン いしずえのめんex"] >= 1) && !(cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1) {
 		deckType := analyze(
 			"オーガポンバレット",
 			deck,
