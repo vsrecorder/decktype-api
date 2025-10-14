@@ -12,3 +12,7 @@ run:
 docker-build-and-push:
 	go mod tidy
 	sudo docker build -t vsrecorder/decktype-api:latest . && sudo docker push vsrecorder/decktype-api:latest
+
+.PHONY: deploy
+deploy:
+	docker compose pull && docker compose down && docker compose up -d

@@ -76,7 +76,19 @@ func GetM2(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["メガアブソルex"] >= 2 {
+	if cardlist["メガガルーラex"] >= 2 && cardlist["メガアブソルex"] >= 2 {
+		deckType := analyze(
+			"メガガルーラex & メガアブソルex",
+			deck,
+			[]string{
+				"メガガルーラex",
+				"メガアブソルex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガアブソルex"] >= 2 && cardlist["メガガルーラex"] == 0 {
 		deckType := analyze(
 			"メガアブソルex",
 			deck,
@@ -89,7 +101,7 @@ func GetM2(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["メガガルーラex"] >= 3 {
+	if cardlist["メガガルーラex"] >= 3 && cardlist["メガアブソルex"] == 0 {
 		deckType := analyze(
 			"メガガルーラex",
 			deck,
