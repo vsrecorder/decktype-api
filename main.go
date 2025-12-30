@@ -10,6 +10,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/vsrecorder/decktype-api/internal/beta"
 	"github.com/vsrecorder/decktype-api/internal/handlers"
 )
 
@@ -36,22 +37,34 @@ func main() {
 		MaxAge:           24 * time.Hour,
 	}))
 
-	{
-		r.GET(
-			"/decktypes/:id",
-			handlers.GetM2,
-		)
+	r.GET(
+		"/decktypes/:id",
+		handlers.GetMc,
+	)
 
-		r.GET(
-			"/decktypes/:id/m2",
-			handlers.GetM2,
-		)
+	r.GET(
+		"/decktypes/:id/mc",
+		handlers.GetMc,
+	)
+	r.GET(
+		"/decktypes/:id/m2a",
+		handlers.GetM2a,
+	)
 
-		r.GET(
-			"/decktypes/:id/m1",
-			handlers.GetM1,
-		)
-	}
+	r.GET(
+		"/decktypes/:id/m2",
+		handlers.GetM2,
+	)
+
+	r.GET(
+		"/decktypes/:id/m1",
+		handlers.GetM1,
+	)
+
+	r.GET(
+		"/api/v1beta/decktypes/:id",
+		beta.GetM2a,
+	)
 
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
