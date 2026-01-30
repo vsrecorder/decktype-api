@@ -1150,23 +1150,6 @@ func GetM1(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["タケルライコex"] == 0 && cardlist["リザードンex"] == 0 && cardlist["オーガポン みどりのめんex"] >= 3 && (cardlist["オーガポン いどのめんex"] >= 1 && cardlist["オーガポン いしずえのめんex"] >= 1) && !(cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1 || cardlist["テツノイサハex"] >= 1) {
-		deckType := analyze(
-			"オーガポンバレット",
-			deck,
-			[]string{
-				"オーガポン みどりのめんex",
-				"オーガポン いどのめんex",
-				"オーガポン いしずえのめんex",
-				"リーリエのピッピex",
-				"ミュウex",
-				"メガガルーラex",
-				"鬼の仮面",
-			},
-		)
-		deckTypes = append(deckTypes, deckType)
-	}
-
 	if cardlist["ホップのザシアンex"] >= 2 {
 		deckType := analyze(
 			"ホップのザシアンex",

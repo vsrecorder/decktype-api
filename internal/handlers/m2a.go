@@ -653,6 +653,17 @@ func GetM2a(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["ロケット団のドンカラス"] >= 3 {
+		deckType := analyze(
+			"ロケット団のドンカラス",
+			deck,
+			[]string{
+				"ロケット団のドンカラス",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["ロケット団のポリゴンZ"] >= 3 {
 		deckType := analyze(
 			"ロケット団のポリゴンZ",
@@ -1263,26 +1274,6 @@ func GetM2a(ctx *gin.Context) {
 				"メガガルーラex",
 				"メガクチートex",
 				"ゼロの大空洞",
-			},
-		)
-		deckTypes = append(deckTypes, deckType)
-	}
-
-	if cardlist["タケルライコex"] <= 1 && cardlist["リザードンex"] == 0 && cardlist["オーガポン みどりのめんex"] >= 2 && !(cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1) {
-		deckType := analyze(
-			"オーガポンバレット",
-			deck,
-			[]string{
-				"オーガポン みどりのめんex",
-				"オーガポン いどのめんex",
-				"オーガポン いしずえのめんex",
-				"ミュウex",
-				"タケルライコex",
-				"テツノイサハex",
-				"ガチグマ アカツキex",
-				"リーリエのピッピex",
-				"メガガルーラex",
-				"メガアブソルex",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
