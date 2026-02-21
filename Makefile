@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 .PHONY: build
 build:
 	go mod tidy
@@ -8,8 +10,8 @@ run:
 	go mod tidy
 	go run main.go
 
-.PHONY: docker-build-and-push
-docker-build-and-push:
+.PHONY: image
+image:
 	go mod tidy
 	docker build -t vsrecorder/decktype-api:latest . && docker push vsrecorder/decktype-api:latest
 
