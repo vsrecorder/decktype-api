@@ -194,6 +194,43 @@ func GetM3(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["メガユキノオーex"] >= 2 {
+		deckType := analyze(
+			"メガユキノオーex",
+			deck,
+			[]string{
+				"メガユキノオーex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガディアンシーex"] >= 2 {
+		deckType := analyze(
+			"メガディアンシーex",
+			deck,
+			[]string{
+				"メガディアンシーex",
+				"ヨノワール",
+				"ブルンゲルex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガピクシーex"] >= 2 {
+		deckType := analyze(
+			"メガピクシーex",
+			deck,
+			[]string{
+				"メガピクシーex",
+				"メガサーナイトex",
+				"ヨノワール",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["ストリンダー"] >= 3 {
 		deckType := analyze(
 			"ストリンダーバレット",
@@ -225,6 +262,29 @@ func GetM3(ctx *gin.Context) {
 				"チヲハウハネ",
 				"テツノイサハex",
 				"メガガルーラex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["オーガポン みどりのめんex"] >= 2 && (cardlist["オーガポン いどのめんex"] >= 1 || cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1) {
+		deckType := analyze(
+			"テラスタルバレット",
+			deck,
+			[]string{
+				"オーガポン みどりのめんex",
+				"オーガポン いどのめんex",
+				"オーガポン いしずえのめんex",
+				"テラパゴスex",
+				"ピカチュウex",
+				"ミュウex",
+				"タケルライコex",
+				"テツノイサハex",
+				"ガチグマ アカツキex",
+				"リーリエのピッピex",
+				"メガガルーラex",
+				"メガクチートex",
+				"ゼロの大空洞",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
@@ -1049,29 +1109,6 @@ func GetM3(ctx *gin.Context) {
 				"ゼクロムex",
 				"ピカチュウex",
 				"テツノイサハex",
-			},
-		)
-		deckTypes = append(deckTypes, deckType)
-	}
-
-	if cardlist["タケルライコex"] <= 1 && cardlist["リザードンex"] == 0 && cardlist["オーガポン みどりのめんex"] >= 2 && (cardlist["テラパゴスex"] >= 1 || cardlist["ピカチュウex"] >= 1) {
-		deckType := analyze(
-			"テラスタルバレット",
-			deck,
-			[]string{
-				"オーガポン みどりのめんex",
-				"オーガポン いどのめんex",
-				"オーガポン いしずえのめんex",
-				"テラパゴスex",
-				"ピカチュウex",
-				"ミュウex",
-				"タケルライコex",
-				"テツノイサハex",
-				"ガチグマ アカツキex",
-				"リーリエのピッピex",
-				"メガガルーラex",
-				"メガクチートex",
-				"ゼロの大空洞",
 			},
 		)
 		deckTypes = append(deckTypes, deckType)
