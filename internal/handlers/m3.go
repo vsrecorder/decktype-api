@@ -231,6 +231,19 @@ func GetM3(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["メガサーナイトex"] >= 2 {
+		deckType := analyze(
+			"メガサーナイトex",
+			deck,
+			[]string{
+				"メガサーナイトex",
+				"ブルンゲルex",
+				"マシマシラ",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["ストリンダー"] >= 3 {
 		deckType := analyze(
 			"ストリンダーバレット",
@@ -1119,6 +1132,20 @@ func GetM3(ctx *gin.Context) {
 			"ホップのザシアンex",
 			deck,
 			[]string{
+				"ホップのザシアンex",
+				"ホップのカビゴン",
+				"ホップのウッウ",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["ホップのオーロット"] >= 3 {
+		deckType := analyze(
+			"ホップのオーロット",
+			deck,
+			[]string{
+				"ホップのオーロット",
 				"ホップのザシアンex",
 				"ホップのカビゴン",
 				"ホップのウッウ",
