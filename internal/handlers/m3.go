@@ -49,6 +49,61 @@ func GetM3(ctx *gin.Context) {
 
 	deckTypes := []*DeckType{}
 
+	if cardlist["ジュナイパーex"] >= 2 {
+		deckType := analyze(
+			"ジュナイパーex",
+			deck,
+			[]string{
+				"ジュナイパーex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["エンニュートex"] >= 2 {
+		deckType := analyze(
+			"エンニュートex",
+			deck,
+			[]string{
+				"エンニュートex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガジガルデex"] >= 2 {
+		deckType := analyze(
+			"メガジガルデex",
+			deck,
+			[]string{
+				"メガジガルデex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガスターミーex"] >= 2 {
+		deckType := analyze(
+			"メガスターミーex",
+			deck,
+			[]string{
+				"メガスターミーex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガユキメノコex"] >= 2 {
+		deckType := analyze(
+			"メガユキメノコex",
+			deck,
+			[]string{
+				"メガユキメノコex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["メガカイリューex"] >= 2 {
 		deckType := analyze(
 			"メガカイリューex",
