@@ -1,5 +1,9 @@
 package handlers
 
+import lru "github.com/hashicorp/golang-lru/v2"
+
+var cache, _ = lru.New[string, []*DeckType](2000)
+
 type Card struct {
 	Name      string `json:"name"`
 	DetailURL string `json:"detail_url"`

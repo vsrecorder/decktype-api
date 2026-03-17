@@ -5,6 +5,7 @@ go 1.25.1
 require (
 	github.com/gin-contrib/cors v1.7.5
 	github.com/gin-gonic/gin v1.10.1
+	github.com/hashicorp/golang-lru/v2 v2.0.7
 )
 
 require (

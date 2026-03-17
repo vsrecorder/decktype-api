@@ -39,9 +39,13 @@ func main() {
 
 	r.GET(
 		"/decktypes/:id",
-		handlers.GetM3,
+		handlers.GetM4,
 	)
 
+	r.GET(
+		"/decktypes/:id/environments/m4",
+		handlers.GetM4,
+	)
 	r.GET(
 		"/decktypes/:id/environments/m3",
 		handlers.GetM3,

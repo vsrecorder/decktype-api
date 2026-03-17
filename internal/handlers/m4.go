@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetM3(ctx *gin.Context) {
+func GetM4(ctx *gin.Context) {
 	deckCode := ctx.Param("id")
 
 	ret, ok := cache.Get(deckCode)
@@ -55,6 +55,72 @@ func GetM3(ctx *gin.Context) {
 	}
 
 	deckTypes := []*DeckType{}
+
+	if cardlist["スピアーex"] >= 2 {
+		deckType := analyze(
+			"スピアーex",
+			deck,
+			[]string{
+				"スピアーex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガカエンジシex"] >= 2 {
+		deckType := analyze(
+			"メガカエンジシex",
+			deck,
+			[]string{
+				"メガカエンジシex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガゲッコウガex"] >= 2 {
+		deckType := analyze(
+			"メガゲッコウガex",
+			deck,
+			[]string{
+				"メガゲッコウガex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["パンプジンex"] >= 2 {
+		deckType := analyze(
+			"パンプジンex",
+			deck,
+			[]string{
+				"パンプジンex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["メガドラミドロex"] >= 2 {
+		deckType := analyze(
+			"メガドラミドロexx",
+			deck,
+			[]string{
+				"メガドラミドロex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
+	if cardlist["チラチーノex"] >= 2 {
+		deckType := analyze(
+			"チラチーノex",
+			deck,
+			[]string{
+				"チラチーノex",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
 
 	if cardlist["ジュナイパーex"] >= 2 {
 		deckType := analyze(
