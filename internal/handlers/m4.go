@@ -166,6 +166,17 @@ func GetM4(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
+	if cardlist["ニダンギル"] >= 3 {
+		deckType := analyze(
+			"ニダンギル",
+			deck,
+			[]string{
+				"ニダンギル",
+			},
+		)
+		deckTypes = append(deckTypes, deckType)
+	}
+
 	if cardlist["メガユキメノコex"] >= 2 {
 		deckType := analyze(
 			"メガユキメノコex",
@@ -1175,12 +1186,13 @@ func GetM4(ctx *gin.Context) {
 		deckTypes = append(deckTypes, deckType)
 	}
 
-	if cardlist["リーリエのピッピex"] >= 3 && cardlist["リーリエのしんじゅ"] >= 3 {
+	if cardlist["リーリエのピッピex"] >= 2 && cardlist["リーリエのしんじゅ"] >= 2 && cardlist["オーガポン みどりのめんex"] >= 2 {
 		deckType := analyze(
 			"リーリエのピッピex",
 			deck,
 			[]string{
 				"リーリエのピッピex",
+				"オーガポン みどりのめんex",
 				"リーリエのしんじゅ",
 			},
 		)
